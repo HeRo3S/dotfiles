@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # NOTE:create user/groups (for minimalistic distro)
-chmod +x "$(pwd)"/user.sh
+chmod +x ./user.sh
+# chmod +x "$(pwd)"/user.sh
 # source "$(pwd)"/user.sh
 
 # NOTE:install packages 
-chmod +x "$(pwd)"/packages.sh
-source "$(pwd)"/packages.sh
+chmod +x ./packages.sh
+source packages.sh
 
 # NOTE:import dotfiles
 git clone --recurse-submodules https://github.com/HeRo3S/dotfiles.git
