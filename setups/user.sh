@@ -4,8 +4,9 @@ script_dir=$(dirname "$(realpath "$0")")
 parent_dir=$(dirname "$script_dir")
 
 read -r -p "Typing username: " USERNAME
-read -r -p "Typing groupname: " GROUPNAME
+GROUPNAME="wheel"
 
+groupadd "$GROUPNAME"
 useradd -m -s /bin/bash -G "$GROUPNAME" "$USERNAME"
 
 # Set the user's password (optional)
