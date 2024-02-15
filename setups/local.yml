@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: install packages
+    package:
+      name:
+        - zsh
+        - tmux
+        - neovim
+        - stow
+        - firefox
