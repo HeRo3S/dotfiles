@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh <(curl -L https://nixos.org/nix/install) --daemon
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 bash
 echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
 
@@ -25,3 +25,4 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-
 
 # NOTE: setup nvm and node 
 PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
+
