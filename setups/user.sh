@@ -9,10 +9,10 @@ read -r -p "Typing groupname: " GROUPNAME
 useradd -m -s /bin/bash -G "$GROUPNAME" "$USERNAME"
 
 # Set the user's password (optional)
-echo "$USERNAME:password" | sudo chpasswd
+echo "$USERNAME:password" | chpasswd
 
 # Add sudoers privileges to the group
-echo "%$GROUPNAME ALL=(ALL) ALL" | sudo tee /etc/sudoers.d/"$GROUPNAME"
+echo "%$GROUPNAME ALL=(ALL) ALL" | tee /etc/sudoers.d/"$GROUPNAME"
 
 # Move the script repository to the new user's home directory
 mv "$parent_dir" /home/"$USERNAME"/
