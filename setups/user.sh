@@ -13,6 +13,8 @@ useradd -m -s /bin/bash -G "$GROUPNAME" "$USERNAME"
 echo "$USERNAME:password" | chpasswd
 
 # Add sudoers privileges to the group
+mkdir /etc/sudoers.d/
+touch /etc/sudoers.d/"$GROUPNAME"
 echo "%$GROUPNAME ALL=(ALL) ALL" | tee /etc/sudoers.d/"$GROUPNAME"
 
 # Move the script repository to the new user's home directory
