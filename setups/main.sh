@@ -1,17 +1,18 @@
 #!/bin/bash
 
+script_dir=$(dirname "$(realpath "$0")")
+parent_dir=$(dirname "$script_dir")
+
 # NOTE:create user/groups (for minimalistic distro)
-chmod +x ./user.sh
-# chmod +x "$(pwd)"/user.sh
+chmod +x "$script_dir"/user.sh
 # source "$(pwd)"/user.sh
 
 # NOTE:install packages 
-chmod +x ./packages.sh
-source packages.sh
+chmod +x "$script_dir"/packages.sh
+source "$script_dir"/packages.sh
 
 # NOTE:import dotfiles
-git clone --recurse-submodules https://github.com/HeRo3S/dotfiles.git
-stow ./dotfiles -t ~/ 
+stow "$parent_dir" -t ~/ 
 
 # TODO:setup X11/wayland
 # TODO:setup windows manager
