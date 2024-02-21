@@ -1,8 +1,8 @@
 #!/bin/bash
 
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
-bash
 echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf
+source "${HOME}"/.bashrc
 
 packages=(
     zsh
