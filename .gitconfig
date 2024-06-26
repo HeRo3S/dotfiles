@@ -2,3 +2,5 @@
 [user]
 	email = hungid6a1@gmail.com
 	name = HeRo3S
+[core]
+	editor = nvim
