@@ -19,9 +19,12 @@ done
 
 echo "All packages installed successfully."
 
-# NOTE: setup oh-my-zsh and theme
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
+# NOTE: we don't use OMZ anymore, install zsh plugins like a sane person did
+mkdir "${HOME}"/.zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+# NOTE: and a good prompt written in Rust
+curl -sS https://starship.rs/install.sh | sh
 
 # NOTE: setup nvm and node 
 PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
