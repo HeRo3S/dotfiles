@@ -1,8 +1,14 @@
+/* delete header terminal */
+terminal-window headerbar *,
+terminal-window .titlebar
+{
+  background-image:none;
+  background-color:transparent;
+  margin-top:-100px;
+}
+
 VteTerminal,
  TerminalScreen,
  vte-terminal {
-     padding: 15px 10px 0px 10px;
-     -VteTerminal-inner-border: 15px 10px 0px 10px;
-     /* padding: 0; */
-     /* -VteTerminal-inner-border: 0; */
+     padding: 15px 10px 0px 15px;
 }

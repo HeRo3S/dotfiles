@@ -9,6 +9,7 @@ packages=(
     stow
     tmux
     neovim
+    fzf
     firefox
 )
 

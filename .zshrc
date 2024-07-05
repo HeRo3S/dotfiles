@@ -16,4 +16,5 @@ alias dev_tmux='~/scripts/tmux.sh'
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/zsh-nvm/zsh-nvm.plugin.zsh"
+FZF_ALT_C_COMMAND= eval "$(fzf --zsh)"
 eval "$(starship init zsh)"

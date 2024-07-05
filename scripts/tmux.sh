@@ -1,6 +1,7 @@
 #!/bin/sh
 
-tmux new-session -d 'nvim .'
+tmux new-session -d
+tmux send-keys 'nvm -v' C-m 'clear' C-m 'nvim .' C-m
 
 tmux new-window
 tmux split-window -v
