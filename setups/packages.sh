@@ -24,6 +24,7 @@ echo "All packages installed successfully."
 mkdir "${HOME}"/.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/zsh-history-substring-search
 git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh/zsh-nvm
 # NOTE: and a good prompt written in Rust
 curl -sS https://starship.rs/install.sh | sh
