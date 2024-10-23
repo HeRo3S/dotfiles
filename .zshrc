@@ -16,5 +16,9 @@ alias dev_tmux='~/scripts/tmux.sh'
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/zsh-nvm/zsh-nvm.plugin.zsh"
-FZF_ALT_C_COMMAND= eval "$(fzf --zsh)"
+eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey -M emacs '^J' fzf-cd-widget
