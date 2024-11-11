@@ -17,6 +17,11 @@ source "$HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/zsh-nvm/zsh-nvm.plugin.zsh"
+# The plugin will auto execute this zvm_after_init function
+zvm_after_init() {
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+}
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
