@@ -22,6 +22,7 @@ echo "All packages installed successfully."
 
 # NOTE: we don't use OMZ anymore, install zsh plugins like a sane person did
 mkdir "${HOME}"/.zsh
+git clone https://github.com/jeffreytse/zsh-vi-mode.git ~/.zsh/zsh-vi-mode
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh/zsh-nvm
