@@ -30,10 +30,10 @@ git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh/zsh-nvm
 curl -sS https://starship.rs/install.sh | sh
 
 # NOTE: setup nvm and node 
-PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
-nvm install --lts
+PROFILE=/dev/null bash -c 'curl -fsSL https://fnm.vercel.app/install | bash'
+fnm install --lts
 
-NVM_GLOBAL_PACKAGES=(yarn tree-sitter)
+NVM_GLOBAL_PACKAGES=(tree-sitter-cli)
 for nvmPkg in "$NVM_GLOBAL_PACKAGES"; do
     echo "Installing $nvmPkg..."
     npm install -g $NVM_GLOBAL_PACKAGES
