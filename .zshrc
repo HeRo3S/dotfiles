@@ -6,6 +6,8 @@ if [ -e /home/amelia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/amelia/.n
 #Alias
 alias dev_tmux='~/scripts/tmux.sh'
 
+#Setup zsh features
+autoload -Uz compinit && compinit
 #Setup zsh plugins and starship prompt
 source "$HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
