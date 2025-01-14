@@ -4,7 +4,9 @@ export PATH=$HOME/bin:$HOME/nix-profile/bin:/usr/local/bin:$PATH
 if [ -e /home/amelia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/amelia/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 #Alias
-alias dev_tmux='~/scripts/tmux.sh'
+alias dev_tmux='~/scripts/dev-tmux.sh'
+alias tmux-ready='~/scripts/tmux-ready.sh'
+alias tmux-sessionizer='~/scripts/tmux-sessionizer.sh'
 
 #Setup zsh features
 autoload -Uz compinit && compinit
@@ -20,7 +22,8 @@ zvm_after_init() {
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
-bindkey -M emacs '^J' fzf-cd-widget
+# bindkey -M emacs '^J' fzf-cd-widget
+bindkey '^O' 'tmux-sessionizer'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
