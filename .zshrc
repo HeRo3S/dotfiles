@@ -3,8 +3,9 @@ export PATH=$HOME/bin:$HOME/nix-profile/bin:/usr/local/bin:$PATH
 
 if [ -e /home/amelia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/amelia/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+source "$HOME/keybinds/env.sh"
 source "$HOME/keybinds/aliases.sh"
-source "$HOME/keybinds/aliases.zsh"
+source "$HOME/keybinds/functions.zsh"
 
 #Setup zsh features
 autoload -Uz compinit && compinit
