@@ -10,10 +10,14 @@ All packages that will be installed:
     - Tmux
     - Neovim
     - Firefox
+    - FZF
 - Through curl:
-    - Oh-my-zsh
-    - Powerlevel10k
-    - NVM
+    - FNM
+    - Starship.rs
+- Some ZSH plugins:
+    - Autosuggestion/ Autocompletion
+    - Syntax highlighting
+    - ZSH vi mode
 
 ## Usage
 For minimalistic distros like Arch or Gentoo that don't create user account when you successfully install them, use the create account options.
