@@ -1,6 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# tmux send-keys 'fnm use default' C-m 'nvim .' C-m
+if [[ -x ./tmux-ready.sh ]]; then
+    ./tmux-ready.sh
+    exit 0
+fi
 
 tmux new-window
 tmux split-window -v
