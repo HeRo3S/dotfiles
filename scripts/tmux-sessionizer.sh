@@ -2,7 +2,7 @@
 
 selected=$(find ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
 if [[ -z "$selected" ]]; then
-    exit 0
+    return 0
 fi
 
 selected_name=$(basename "$selected" | tr ":,. " "____")
@@ -17,7 +17,7 @@ switch_to() {
 
 if tmux has -t="$selected_name" 2>/dev/null; then
     switch_to
-    exit 0
+    return 0
 fi
 
 tmux new-session -ds "$selected_name" -c "$selected"
