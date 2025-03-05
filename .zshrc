@@ -3,6 +3,11 @@ export PATH=$HOME/bin:$HOME/nix-profile/bin:/usr/local/bin:$PATH
 
 if [ -e /home/amelia/.nix-profile/etc/profile.d/nix.sh ]; then . /home/amelia/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+#asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 source "$HOME/keybinds/env.sh"
 source "$HOME/keybinds/aliases.sh"
 source "$HOME/keybinds/functions.zsh"
