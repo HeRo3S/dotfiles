@@ -1,6 +1,7 @@
-
 [user]
 	email = hungid6a1@gmail.com
 	name = HeRo3S
 [core]
 	editor = nvim
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
