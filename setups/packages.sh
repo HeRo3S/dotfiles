@@ -28,7 +28,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 # NOTE: and a good prompt written in Rust
 curl -sS https://starship.rs/install.sh | sh
 
-# NOTE: setup nvm and node 
+# NOTE: setup fnm and node 
 PROFILE=/dev/null bash -c 'curl -fsSL https://fnm.vercel.app/install | bash'
 fnm install --lts
 
