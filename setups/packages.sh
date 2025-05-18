@@ -11,6 +11,8 @@ packages=(
     neovim
     fzf
     firefox
+    keychain
+    ripgrep
 )
 
 for pkg in "${packages[@]}"; do

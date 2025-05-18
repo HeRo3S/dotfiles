@@ -19,7 +19,9 @@ chmod +x "$script_dir"/packages.sh
 cd "$parent_dir" && stow . -t "${HOME}" || return
 git submodule update --init --recursive
 
-chmod +x "$parent_dir"/scripts/tmux.sh
+chmod +x "$parent_dir"/scripts/dev-tmux.sh
+chmod +x "$parent_dir"/scripts/tmux-ready.sh
+chmod +x "$parent_dir"/scripts/tmux-sessionizer.sh
 
 # TODO:setup X11/wayland
 # TODO:setup windows manager

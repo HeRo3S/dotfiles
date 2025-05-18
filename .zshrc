@@ -20,8 +20,8 @@ source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # The plugin will auto execute this zvm_after_init function
 zvm_after_init() {
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  source /usr/share/doc/fzf/examples/completion.zsh
+  # source /usr/share/doc/fzf/examples/key-bindings.zsh
+  # source /usr/share/doc/fzf/examples/completion.zsh
   source "$HOME/keybinds/keybinds.sh"
 }
 eval "$(fzf --zsh)"
@@ -38,3 +38,15 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/amelia/.local/share/fnm:$PATH"
   eval "`fnm env --use-on-cd --version-file-strategy=recursive`"
 fi
+
+# keychain
+if type keychain >/dev/null 2>&1; then
+  eval "$(keychain --eval --quiet ~/.ssh/github)"
+  # Add any other specific key names you want to load by default.
+  # Or, to attempt loading all keys in ~/.ssh:
+  # eval "$(keychain --eval --quiet --agents ssh ~/.ssh/id_*)"
+  # Or simply:
+  # eval "$(keychain --eval --quiet)" # This will try to load default keys
+fi
+
+
