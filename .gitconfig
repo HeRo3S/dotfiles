@@ -4,4 +4,8 @@
 [core]
 	editor = nvim
 [alias]
+    hisf = !git ls-files | fzf | xargs git log -p -M --follow --stat
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    cb = !git branch | fzf | xargs git checkout
+    pr = pull --rebase
+    pf = push --force-with-lease
