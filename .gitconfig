@@ -9,3 +9,4 @@
     cb = !git branch | fzf | xargs git checkout
     pr = pull --rebase
     pf = push --force-with-lease
+    cp = !git branch | fzf | xargs -I {} sh -c 'git log --oneline {} | fzf -m | xargs git cherry-pick -m 1'
