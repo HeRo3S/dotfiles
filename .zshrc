@@ -11,6 +11,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 source "$HOME/keybinds/env.sh"
 source "$HOME/keybinds/aliases.sh"
 source "$HOME/keybinds/functions.zsh"
+export FZF_DEFAULT_OPTS='--multi --no-height --extended'
 
 #Setup zsh features
 autoload -Uz compinit && compinit
