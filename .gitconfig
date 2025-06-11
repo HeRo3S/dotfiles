@@ -7,6 +7,7 @@
     hisf = !git ls-files | fzf | xargs git log -p -M --follow --stat
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
     cb = !git branch | fzf | xargs git checkout
+    rb = !git branch | fzf | xargs git branch -D
     pr = pull --rebase
     pf = push --force-with-lease
-    cp = !git branch | fzf | xargs -I {} sh -c 'git log --oneline {} | fzf -m | xargs git cherry-pick -m 1'
+    cp = !bash -c 'source ~/scripts/git-cherry-pick.sh'
