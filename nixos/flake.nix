@@ -1,0 +1,29 @@
+{
+  description = "Nixos config flake";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, ... }@inputs: 
+  let pkgs = import nixpkgs {system = "x86_64-linux"; config.allowUnfree = true;};
+  in {
+    # use "nixos", or your hostname as the name of the configuration
+    # it's a better practice than "default" shown in the video
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/laptop/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+    };
+  };
+}
