@@ -15,9 +15,16 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  imports = [
+    ./../../modules/home-manager
+    ./../../modules/home-manager/shell
+    ./../../modules/home-manager/tmux
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.fnm
     pkgs.steam
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -40,9 +47,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/starship.toml".source = ../../../.config/starship.toml;
     ".gitconfig".source = ../../../.gitconfig;
-    ".zshrc".source = ../../../.zshrc;
 
 
     # # You can also set the file content immediately.
@@ -51,7 +56,9 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+  #xdg.configFile."hypr/hyprland.conf".source = "/home/amelia/personal/dotfiles/.config/hypr/hyprland.conf";
   xdg.configFile."hypr/hyprland.conf".source = ../../../.config/hypr/hyprland.conf;
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink("/home/amelia/personal/dotfiles/.config/nvim/");
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

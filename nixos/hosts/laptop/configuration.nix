@@ -81,21 +81,27 @@
     isNormalUser = true;
     description = "amelia";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    gcc
+    libgcc
+    cargo
+    ripgrep
+    tree-sitter
     wget
+    jq
+    fzf
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     kitty
     tmux
     firefox
-    zsh
     bitwarden
-    starship
     wofi
     libsForQt5.dolphin
     waybar
