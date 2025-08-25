@@ -19,12 +19,12 @@
     ./../../modules/home-manager
     ./../../modules/home-manager/shell
     ./../../modules/home-manager/tmux
+    ./../../modules/home-manager/nvim
   ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.fnm
     pkgs.steam
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -58,7 +58,6 @@
   };
   #xdg.configFile."hypr/hyprland.conf".source = "/home/amelia/personal/dotfiles/.config/hypr/hyprland.conf";
   xdg.configFile."hypr/hyprland.conf".source = ../../../.config/hypr/hyprland.conf;
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink("/home/amelia/personal/dotfiles/.config/nvim/");
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
