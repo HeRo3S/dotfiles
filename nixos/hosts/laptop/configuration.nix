@@ -5,11 +5,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/core/nvidia.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -25,19 +25,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-  };
+  hardware.graphics = { enable = true; };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -70,6 +58,8 @@
     variant = "colemak_dh";
   };
 
+  services.displayManager.ly = { enable = true; };
+
   programs.hyprland = {
     enable = true;
     # withUWSM = true;
@@ -88,6 +78,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    brightnessctl
+    playerctl
     gcc
     libgcc
     cargo
@@ -119,10 +111,11 @@
   # };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit pkgs; };
-    users = {
-      "amelia" = import ./home.nix;
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit pkgs;
     };
+    users = { "amelia" = import ./home.nix; };
   };
 
   # List services that you want to enable:

@@ -17,7 +17,9 @@
 
   imports = [
     ./../../modules/home-manager
+    ./../../modules/home-manager/wayland
     ./../../modules/home-manager/shell
+    ./../../modules/home-manager/kitty
     ./../../modules/home-manager/tmux
     ./../../modules/home-manager/nvim
   ];
@@ -56,8 +58,6 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  #xdg.configFile."hypr/hyprland.conf".source = "/home/amelia/personal/dotfiles/.config/hypr/hyprland.conf";
-  xdg.configFile."hypr/hyprland.conf".source = ../../../.config/hypr/hyprland.conf;
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

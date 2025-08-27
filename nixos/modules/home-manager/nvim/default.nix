@@ -20,7 +20,6 @@
       stylua
     ];
   };
-
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
-    ("/home/amelia/personal/dotfiles/.config/nvim/");
+    ("${config.customVars.dotfilesDir}/.config/nvim/");
 }
