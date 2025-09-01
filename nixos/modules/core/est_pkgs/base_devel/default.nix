@@ -12,9 +12,11 @@
     curl
     unzip
     gnutar
+    socat
     jq
     fzf
     git
+    xclip
     htop
     neofetch
     neovim

@@ -22,11 +22,14 @@
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-      kdePackages.fcitx5-qt
-      fcitx5-bamboo
-    ];
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+        kdePackages.fcitx5-qt
+        fcitx5-bamboo
+      ];
+      waylandFrontend = true;
+    };
   };
 }

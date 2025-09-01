@@ -9,4 +9,6 @@
     fooyin
     bitwarden
   ];
+  # Need to install globally cause i'm too lazy to extract the module
+  programs.steam.enable = true;
 }

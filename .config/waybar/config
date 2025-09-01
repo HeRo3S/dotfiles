@@ -3,10 +3,12 @@
   "position": "top",
   "margin-bottom": -10,
   "spacing" : 0,
+
   "modules-left": [
   "hyprland/workspaces",
   "custom/uptime",
-  "cpu"
+  "cpu",
+  "memory"
   ],
 
   "modules-center": ["clock"],

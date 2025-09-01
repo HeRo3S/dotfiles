@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  xdg.configFile."hypr/hyprland.conf".source =
-    config.lib.file.mkOutOfStoreSymlink
-    ("${config.customVars.dotfilesDir}/.config/hypr/hyprland.conf");
+  home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink
+    ("${config.customVars.dotfilesDir}/.config/hypr");
+  home.packages = with pkgs; [ linux-wallpaperengine hyprshot ];
 }
