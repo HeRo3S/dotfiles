@@ -30,14 +30,6 @@
     variant = "colemak_dh";
   };
 
-  services.displayManager.ly = { enable = true; };
-
-  programs.hyprland = {
-    enable = true;
-    # withUWSM = true;
-    xwayland.enable = true;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.amelia = {
     isNormalUser = true;
@@ -49,34 +41,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    playerctl
-    helvum
-    gcc
-    libgcc
-    cargo
-    ripgrep
-    tree-sitter
-    wget
-    curl
-    unzip
-    gnutar
-    jq
-    fzf
-    htop
-    neofetch
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
-    kitty
-    tmux
-    firefox
-    bitwarden
-    wofi
-    libsForQt5.dolphin
-    waybar
-    mpv
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

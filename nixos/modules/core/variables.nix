@@ -4,10 +4,12 @@
   options.customCfg = {
     nvidia.enable = lib.mkEnableOption "nvidia";
     bluetooth.enable = lib.mkEnableOption "bluetooth";
+    isLaptop = lib.mkEnableOption "laptop";
   };
 
   config.customCfg = {
     nvidia.enable = true;
     bluetooth.enable = true;
+    isLaptop = true;
   };
 }

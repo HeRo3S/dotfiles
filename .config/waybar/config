@@ -19,6 +19,7 @@
     "wireplumber", 
     "backlight",
     "battery",
+    "custom/lock",
   ],
 
   "hyprland/workspaces": {
@@ -54,10 +55,14 @@
   },
 
   "clock": {
-    "timezone": "Asia/Kolkata",
+    "timezone": "Asia/Ho_Chi_Minh",
     "tooltip": false,
     "format": "{:%H:%M:%S  -  %A, %d}",
     "interval": 1
+  },
+
+  "tray": {
+    "spacing": 10,
   },
 
   "network": {
@@ -111,7 +116,7 @@
     "format-icons": {
       "default": ["", "", " "]
     },
-    "on-click": "helvum"
+    "on-click": "pavucontrol"
   },
 
   "battery": {

@@ -15,19 +15,11 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  imports = [
-    ./../../modules/home-manager
-    ./../../modules/home-manager/wayland
-    ./../../modules/home-manager/shell
-    ./../../modules/home-manager/kitty
-    ./../../modules/home-manager/tmux
-    ./../../modules/home-manager/nvim
-  ];
+  imports = [ ./../../modules/home-manager ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.steam
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -49,8 +41,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".gitconfig".source = ../../../.gitconfig;
-
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
