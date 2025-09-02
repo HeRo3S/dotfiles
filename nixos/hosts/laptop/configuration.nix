@@ -31,10 +31,10 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.amelia = {
+  users.users.${config.customCfg.user.name} = {
     isNormalUser = true;
-    description = "amelia";
-    extraGroups = [ "networkmanager" "wheel" ];
+    description = config.customCfg.user.name;
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
@@ -56,7 +56,7 @@
       inherit inputs;
       inherit pkgs;
     };
-    users = { "amelia" = import ./home.nix; };
+    users = { ${config.customCfg.user.name} = import ./home.nix; };
   };
 
   # List services that you want to enable:

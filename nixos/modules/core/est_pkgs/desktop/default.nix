@@ -11,6 +11,7 @@
   programs.hyprlock.enable = true;
 
   environment.systemPackages = with pkgs; [
+    lshw
     dunst
     kitty
     waybar

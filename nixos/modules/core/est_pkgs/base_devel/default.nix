@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    usbutils
     gcc
     libgcc
     cmake

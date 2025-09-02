@@ -1,5 +1,6 @@
 { ... }:
 
 {
-  imports = [ ./variables.nix ./i18n ./network ./nvidia ./laptop ./est_pkgs ];
+  imports =
+    [ ./variables.nix ./i18n ./network ./graphics ./laptop ./est_pkgs ./vfio ];
 }
