@@ -25,9 +25,12 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "colemak_dh";
+  services.xserver = {
+    xkb = {
+      layout = "us, us";
+      variant = "colemak_dh,";
+      options = "grp:alt_shift_toggle";
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
