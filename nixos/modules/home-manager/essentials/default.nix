@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./font ./kitty ./shell ./wayland ];
+  imports = [ ./font ./kitty ./shell ./wayland ./browser ];
 }
