@@ -26,8 +26,8 @@
       addons = with pkgs; [
         fcitx5-mozc
         fcitx5-gtk
+        fcitx5-unikey
         kdePackages.fcitx5-qt
-        fcitx5-bamboo
       ];
       waylandFrontend = true;
     };

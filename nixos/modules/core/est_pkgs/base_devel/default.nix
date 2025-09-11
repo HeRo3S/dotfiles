@@ -19,6 +19,8 @@
     git
     xclip
     htop
+    gpustat
+    intel-gpu-tools
     neofetch
     neovim
     tmux
