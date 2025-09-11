@@ -2,7 +2,7 @@
 
 {
   config = lib.mkIf config.customCfg.isLaptop {
-    services.xserver.libinput = {
+    services.libinput = {
       enable = true;
       touchpad.naturalScrolling = true;
     };

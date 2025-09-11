@@ -25,6 +25,10 @@
         description = "List of vfio pci devices.";
       };
     };
+    containers = {
+      docker = lib.mkEnableOption "docker";
+      podman = lib.mkEnableOption "podman";
+    };
     user = {
       name = lib.mkOption {
         type = lib.types.str;
@@ -47,6 +51,10 @@
     vfio = {
       enable = true;
       vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
+    };
+    containers = {
+      docker = false;
+      podman = true;
     };
     user = { name = "amelia"; };
   };
