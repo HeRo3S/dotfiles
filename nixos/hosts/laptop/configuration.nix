@@ -43,6 +43,12 @@
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
+  security.pam.loginLimits = [{
+    domain = "*";
+    type = "-";
+    item = "memlock";
+    value = "infinity";
+  }];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./base_devel ./desktop ./file-manager ./media ];
+  imports = [ ./base_devel ./desktop ./file_manager ./media ./compat_layer ];
 }
