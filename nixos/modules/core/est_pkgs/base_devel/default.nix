@@ -17,7 +17,7 @@
     jq
     fzf
     git
-    xclip
+    wl-clipboard
     htop
     gpustat
     intel-gpu-tools
