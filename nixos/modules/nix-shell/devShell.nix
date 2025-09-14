@@ -10,7 +10,7 @@
     in {
       # use "nixos", or your hostname as the name of the configuration
       # it's a better practice than "default" shown in the video
-      devShell = pkgs.mkShell {
+      devShell."x86_64-linux" = pkgs.mkShell {
         buildInputs = with pkgs;
           [
             # add your development environment here

@@ -41,8 +41,8 @@
     graphics = {
       nvidia = {
         enable = true;
-        discreteGpuBusId = "PCI:1:0:0";
-        onboardGpuBusId = "PCI:0:2:0";
+        discreteGpuBusId = "PCI:1@0:0:0";
+        onboardGpuBusId = "PCI:0@0:2:0";
       };
       intel.enable = true;
     };
