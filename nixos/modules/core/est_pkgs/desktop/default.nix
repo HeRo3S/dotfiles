@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   # services.displayManager.ly = { enable = true; };
@@ -18,11 +18,9 @@
     ${pkgs.systemd}/bin/systemctl suspend
   '';
 
-  services.logind = {
-    powerKey = "suspend";
-  };
+  services.logind = { powerKey = "suspend"; };
 
-  systemd.user.services."hyprland-sleep-lock" = {
+  systemd.services."hyprland-sleep-lock" = {
     description = "Lock screen before sleep";
     wantedBy = [ "sleep.target" ];
     before = [ "sleep.target" ];
@@ -34,7 +32,7 @@
     dunst
     kitty
     waybar
-    wofi
+    rofi-wayland-unwrapped
     brightnessctl
     playerctl
     pavucontrol
