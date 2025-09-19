@@ -13,6 +13,7 @@
     curl
     unzip
     gnutar
+    gnumake
     socat
     jq
     fzf

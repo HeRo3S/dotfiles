@@ -9,5 +9,6 @@
     yabridge
     yabridgectl
     kdePackages.kdenlive
+    texlive.combined.scheme-full
   ];
 }

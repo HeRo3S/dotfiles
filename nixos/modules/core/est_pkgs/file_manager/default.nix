@@ -3,5 +3,14 @@
 {
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-  environment.systemPackages = with pkgs; [ xfce.thunar lf ];
+  services.tumbler.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+      thunar-volman
+    ];
+  };
+  environment.systemPackages = with pkgs; [ lf ];
 }

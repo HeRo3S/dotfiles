@@ -25,11 +25,11 @@
   # Configure keymap in X11
   services.xserver = {
     xkb = {
-      layout = "us";
-      variant = "";
-      # layout = "us,us";
-      # variant = "colemak_dh,";
-      # options = "grp:alt_shift_toggle";
+      # layout = "us";
+      # variant = "";
+      layout = "us,us";
+      variant = ",colemak_dh";
+      options = "grp:win_space_toggle";
     };
   };
 

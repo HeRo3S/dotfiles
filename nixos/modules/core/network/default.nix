@@ -9,6 +9,12 @@
   networking.networkmanager.enable = true;
   networking.firewall.trustedInterfaces = [ "virbr0" ];
 
+  # networking.networkmanager.dns = "none";
+  # services.resolved.enable = true;
+  
+  # Direct Quad9 DNS servers
+  # networking.nameservers = [ "9.9.9.9" "149.112.112.112" ];
+
   hardware.bluetooth.enable = lib.mkIf config.customCfg.bluetooth.enable true;
   services.blueman.enable = lib.mkIf config.customCfg.bluetooth.enable true;
 
