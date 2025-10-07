@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./multimedia ./programming ];
+  imports = [ ./multimedia ./office ./programming ];
 }
