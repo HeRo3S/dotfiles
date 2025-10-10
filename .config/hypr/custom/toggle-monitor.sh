@@ -2,7 +2,7 @@
 
 set -x
 MONITOR="HDMI-A-1"
-STATE=$(hyprctl monitors | grep -A 20 "$MONITOR" | grep "disabled" | wc -l)
+STATE=$(hyprctl monitors | grep -A 25 "$MONITOR" | grep "disabled" | wc -l)
 
 if [ "$STATE" -gt 0 ]; then
     # Disable monitor

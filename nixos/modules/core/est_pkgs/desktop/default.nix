@@ -18,7 +18,7 @@
     ${pkgs.systemd}/bin/systemctl suspend
   '';
 
-  services.logind = { powerKey = "suspend"; };
+  services.logind.settings.Login = { HandlePowerKey = "suspend"; };
 
   systemd.services."hyprland-sleep-lock" = {
     description = "Lock screen before sleep";
@@ -32,7 +32,7 @@
     dunst
     kitty
     waybar
-    rofi-wayland-unwrapped
+    rofi-unwrapped
     brightnessctl
     playerctl
     pavucontrol

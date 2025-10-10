@@ -2,9 +2,11 @@
 
 {
   config = lib.mkIf config.customCfg.isLaptop {
-    services.logind.lidSwitch = "hybrid-sleep";
-    services.logind.lidSwitchExternalPower = "ignore";
-    services.logind.lidSwitchDocked = "ignore";
+    services.logind.settings.Login = {
+      HandleLidSwitch = "hybrid-sleep";
+      HandleLidSwitchExternalPower = "ignore";
+      HandleLidSwitchDocked = "ignore";
+    };
 
     powerManagement.enable = true;
 
