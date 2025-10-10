@@ -6,6 +6,6 @@
     winetricks
     bottles
     dxvk
-    lutris
+    protonup-qt
   ];
 }
