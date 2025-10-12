@@ -3,19 +3,6 @@
 {
   config = lib.mkIf config.customCfg.graphics.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
-    # services.supergfxd = {
-    #   enable = true;
-    #   settings = {
-    #     mode = "Hybrid";
-    #     vfio_enable = true;
-    #     vfio_save = true;
-    #     hotplug_type = "Asus";
-    #     compute_save = false;
-    #     always_reboot = false;
-    #     no_logind = false;
-    #     logout_timeout_s = 180;
-    #   };
-    # };
 
     hardware.graphics.enable = true;
 

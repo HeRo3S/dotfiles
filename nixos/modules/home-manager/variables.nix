@@ -9,6 +9,7 @@
   };
 
   config.customVars = {
-    dotfilesDir = "${config.home.homeDirectory}/personal/dotfiles";
+    dotfilesDir =
+      lib.mkDefault "${config.home.homeDirectory}/personal/dotfiles";
   };
 }

@@ -40,22 +40,22 @@
   config.customCfg = {
     graphics = {
       nvidia = {
-        enable = true;
-        discreteGpuBusId = "PCI:1@0:0:0";
-        onboardGpuBusId = "PCI:0@0:2:0";
+        enable = lib.mkDefault true;
+        discreteGpuBusId = lib.mkDefault "PCI:1@0:0:0";
+        onboardGpuBusId = lib.mkDefault "PCI:0@0:2:0";
       };
-      intel.enable = true;
+      intel.enable = lib.mkDefault true;
     };
-    bluetooth.enable = true;
-    isLaptop = true;
+    bluetooth.enable = lib.mkDefault true;
+    isLaptop = lib.mkDefault true;
     vfio = {
-      enable = true;
-      vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
+      enable = lib.mkDefault true;
+      vfioPciDevices = lib.mkDefault [ "10de:1f91" "10de:10fa" ];
     };
     containers = {
-      docker = false;
-      podman = true;
+      docker = lib.mkDefault true;
+      podman = lib.mkDefault false;
     };
-    user = { name = "amelia"; };
+    user = { name = lib.mkDefault "amelia"; };
   };
 }

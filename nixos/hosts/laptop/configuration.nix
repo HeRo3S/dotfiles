@@ -11,6 +11,29 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  ## Custom config
+  customCfg = {
+    graphics = {
+      nvidia = {
+        enable = true;
+        discreteGpuBusId = "PCI:1@0:0:0";
+        onboardGpuBusId = "PCI:0@0:2:0";
+      };
+      intel.enable = true;
+    };
+    bluetooth.enable = true;
+    isLaptop = true;
+    vfio = {
+      enable = true;
+      vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
+    };
+    containers = {
+      docker = true;
+      podman = true;
+    };
+    user = { name = "amelia"; };
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

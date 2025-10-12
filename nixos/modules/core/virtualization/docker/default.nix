@@ -6,7 +6,7 @@
     virtualisation.docker = { enable = true; };
 
     # Optional: Add your user to the "docker" group to run docker without sudo
-    # users.users."${config.customCfg.user.name}".groups = [ "docker" ];
+    users.users."${config.customCfg.user.name}".extraGroups = [ "docker" ];
 
     environment.systemPackages = with pkgs; [ docker-compose ];
   };
