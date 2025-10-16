@@ -37,6 +37,14 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+        sanan = nixpkgs.lib.nixosSystem {
+          inherit pkgs;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/sanan/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
     };
 }

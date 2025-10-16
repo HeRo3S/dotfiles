@@ -14,7 +14,10 @@
           description = "The onboard GPU bus ID.";
         };
       };
-      intel.enable = lib.mkEnableOption "intel";
+      intel = {
+        enable = lib.mkEnableOption "intel";
+        isLegacyDevice = lib.mkEnableOption "legacy Intel devices";
+      };
     };
     bluetooth.enable = lib.mkEnableOption "bluetooth";
     isLaptop = lib.mkEnableOption "laptop";
@@ -44,7 +47,10 @@
         discreteGpuBusId = lib.mkDefault "PCI:1@0:0:0";
         onboardGpuBusId = lib.mkDefault "PCI:0@0:2:0";
       };
-      intel.enable = lib.mkDefault true;
+      intel = {
+        enable = lib.mkDefault true;
+        isLegacyDevice = lib.mkDefault false;
+      };
     };
     bluetooth.enable = lib.mkDefault true;
     isLaptop = lib.mkDefault true;

@@ -15,19 +15,19 @@
   customCfg = {
     graphics = {
       nvidia = {
-        enable = true;
+        enable = false;
         discreteGpuBusId = "PCI:1@0:0:0";
         onboardGpuBusId = "PCI:0@0:2:0";
       };
       intel = {
         enable = true;
-        isLegacyDevice = true;
+        isLegacyDevice = false;
       };
     };
     bluetooth.enable = true;
-    isLaptop = true;
+    isLaptop = false;
     vfio = {
-      enable = true;
+      enable = false;
       vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
     };
     containers = {
