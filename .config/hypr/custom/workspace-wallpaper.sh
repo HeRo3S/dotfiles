@@ -54,25 +54,32 @@ declare -A WALLPAPERS=(
 
 setwallpaper() {
     local workspace_id="$1"
-    echo "Setting wallpaper for workspace: $workspace_id"
+    local monitor="$2"
+    echo "Setting wallpaper for workspace: $workspace_id on monitor: $monitor"
 
     # Kill any existing wallpaperengine processes for this screen
-    pkill -f "linux-wallpaperengine.*--screen-root eDP-1"
+    pkill -f "linux-wallpaperengine.*--screen-root $monitor"
 
     if [[ -n "${WALLPAPERS[$workspace_id]}" ]]; then
-        linux-wallpaperengine --silent --screen-root eDP-1 --scaling fill --fps 10 "${WALLPAPERS[$workspace_id]}" &
+        linux-wallpaperengine --silent --screen-root $monitor --scaling fill --fps 10 "${WALLPAPERS[$workspace_id]}" &
     else
-        linux-wallpaperengine --silent --screen-root eDP-1 --scaling fill --fps 10 "${WALLPAPERS[1]}" &
+        linux-wallpaperengine --silent --screen-root $monitor --scaling fill --fps 10 "${WALLPAPERS[1]}" &
     fi
 }
 
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
-setwallpaper "$CURRENT_WS"
+CURRENT_MONITOR=$(hyprctl workspaces -j | jq -r --arg id "$CURRENT_WS" '.[] | select(.id == ($id | tonumber)) | .monitor' | head -n1)
+setwallpaper "$CURRENT_WS" "$CURRENT_MONITOR"
 
 socat -u UNIX-CONNECT:"$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" - |
     while read -r event; do
         if [[ $event == "workspace>>"* ]]; then
             WORKSPACE_ID="${event#workspace>>}"
-            setwallpaper "$WORKSPACE_ID"
+            MONITOR=$(hyprctl workspaces -j | jq -r --arg id "$WORKSPACE_ID" '.[] | select(.id == ($id | tonumber)) | .monitor' | head -n1)
+            if [[ -n "$MONITOR" ]]; then
+                setwallpaper "$WORKSPACE_ID" "$MONITOR"
+            else
+                echo "Warning: Could not determine monitor for workspace $WORKSPACE_ID"
+            fi
         fi
     done
