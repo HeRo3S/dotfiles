@@ -26,5 +26,8 @@
     neovim
     tmux
     ffmpeg-full
+    tcpdump
+    iproute2
+    dig
   ];
 }
