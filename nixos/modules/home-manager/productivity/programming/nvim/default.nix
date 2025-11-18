@@ -18,6 +18,9 @@
 
       #Formatters
       stylua
+
+      # Precommit
+      husky
     ];
   };
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
