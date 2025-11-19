@@ -8,4 +8,5 @@
     dxvk
     protonup-qt
   ];
+  services.flatpak.enable = true;
 }
