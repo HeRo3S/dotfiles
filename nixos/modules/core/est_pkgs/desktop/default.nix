@@ -38,4 +38,6 @@
     pavucontrol
     helvum
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = lib.mkForce "wayland";
 }

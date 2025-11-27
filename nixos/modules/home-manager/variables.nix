@@ -8,8 +8,22 @@
     };
   };
 
-  config.customVars = {
-    dotfilesDir =
-      lib.mkDefault "${config.home.homeDirectory}/personal/dotfiles";
+  options.customHomeCfg = with lib.types; {
+    programming = {
+      apiTool = {
+        openSource = lib.mkEnableOption
+          "Use open-source API tool (Insomnia) instead of Postman";
+      };
+    };
+  };
+
+  config = {
+    customVars = {
+      dotfilesDir =
+        lib.mkDefault "${config.home.homeDirectory}/personal/dotfiles";
+    };
+    customHomeCfg = {
+      programming = { apiTool.openSource = lib.mkDefault false; };
+    };
   };
 }
