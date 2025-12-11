@@ -6,8 +6,8 @@
     mpv
     qimgv
     zathura
-    fooyin
-    bitwarden
+    bitwarden-desktop
+    bitwarden-cli
   ];
   # Need to install globally cause i'm too lazy to extract the module
   programs.steam = {
