@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "tui": {
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
+  "theme": "catppuccin",
+  "autoupdate": "notify",
+  "model": "moonshotai/kimi-k2-thinking",
+  "provider": {
+    "openrouter": {
+      "options": {
+        "api_key": "{env:OPENROUTER_API_KEY}"
+      }
+    }
+  }
+}

@@ -1,2 +1,3 @@
 .tmux/plugins/*
 env.sh
+result/
