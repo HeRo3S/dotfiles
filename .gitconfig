@@ -3,6 +3,8 @@
 	name = HeRo3S
 [core]
 	editor = nvim
+[rerere]
+    enabled = true
 [alias]
     hisf = !git ls-files | fzf | xargs git log -p -M --follow --stat
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
