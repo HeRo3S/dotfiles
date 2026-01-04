@@ -7,7 +7,10 @@
     boot.initrd.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
 
     boot.kernelParams = [
-      "intel_iommu=on" # or "amd_iommu=on"
+      "${if config.customCfg.vfio.amdCpu then
+        "amd_iommu=on"
+      else
+        "intel_iommu=on"}"
       "iommu=pt"
       "vfio-pci.ids=${
         lib.concatStringsSep "," config.customCfg.vfio.vfioPciDevices

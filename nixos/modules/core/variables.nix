@@ -23,6 +23,7 @@
     isLaptop = lib.mkEnableOption "laptop";
     vfio = {
       enable = lib.mkEnableOption "vfio";
+      amdCpu = lib.mkEnableOption "amd cpu";
       vfioPciDevices = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         description = "List of vfio pci devices.";
@@ -56,6 +57,7 @@
     isLaptop = lib.mkDefault true;
     vfio = {
       enable = lib.mkDefault true;
+      amdCpu = lib.mkDefault false;
       vfioPciDevices = lib.mkDefault [ "10de:1f91" "10de:10fa" ];
     };
     containers = {
