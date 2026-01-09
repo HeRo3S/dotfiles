@@ -14,5 +14,11 @@
         "api_key": "{env:OPENROUTER_API_KEY}"
       }
     }
+  },
+  "mcp": {
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp",
+    }
   }
 }
