@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
+  services.openssh.enable = true;
   environment.systemPackages = with pkgs; [
     usbutils
     gcc
