@@ -19,6 +19,8 @@
     jq
     fzf
     git
+    gh
+    glab
     wl-clipboard
     htop
     gpustat

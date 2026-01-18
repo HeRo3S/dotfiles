@@ -7,7 +7,8 @@
   },
   "theme": "catppuccin",
   "autoupdate": "notify",
-  "model": "moonshotai/kimi-k2-thinking",
+  "model": "github-copilot/gemini-3-flash-preview",
+  "small_model": "github-copilot/gpt-5-mini",
   "provider": {
     "openrouter": {
       "options": {
