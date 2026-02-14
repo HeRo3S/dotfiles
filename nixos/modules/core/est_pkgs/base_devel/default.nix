@@ -13,6 +13,8 @@
     wget
     curl
     unzip
+    unrar
+    p7zip
     gnutar
     gnumake
     socat

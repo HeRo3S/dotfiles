@@ -20,8 +20,11 @@
         onboardGpuBusId = "PCI:0@0:2:0";
       };
       intel = {
-        enable = true;
+        enable = false;
         isLegacyDevice = true;
+      };
+      amd = {
+        enable = false;
       };
     };
     bluetooth.enable = true;

@@ -23,11 +23,12 @@
         enable = false;
         isLegacyDevice = false;
       };
+      amd = { enable = true; };
     };
     bluetooth.enable = true;
     isLaptop = true;
     vfio = {
-      enable = true;
+      enable = false;
       amdCpu = true;
       vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
     };

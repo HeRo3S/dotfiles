@@ -23,6 +23,9 @@
         enable = true;
         isLegacyDevice = false;
       };
+      amd = {
+        enable = false;
+      };
     };
     bluetooth.enable = true;
     isLaptop = false;

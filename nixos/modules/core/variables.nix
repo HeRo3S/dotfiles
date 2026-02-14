@@ -18,6 +18,7 @@
         enable = lib.mkEnableOption "intel";
         isLegacyDevice = lib.mkEnableOption "legacy Intel devices";
       };
+      amd = { enable = lib.mkEnableOption "amd"; };
     };
     bluetooth.enable = lib.mkEnableOption "bluetooth";
     isLaptop = lib.mkEnableOption "laptop";
@@ -52,6 +53,7 @@
         enable = lib.mkDefault true;
         isLegacyDevice = lib.mkDefault false;
       };
+      amd = { enable = lib.mkDefault false; };
     };
     bluetooth.enable = lib.mkDefault true;
     isLaptop = lib.mkDefault true;

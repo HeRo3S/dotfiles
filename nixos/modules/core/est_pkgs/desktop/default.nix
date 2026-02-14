@@ -1,11 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  # services.displayManager.ly = { enable = true; };
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.ly = { enable = true; };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
 
   programs.hyprland = {
     enable = true;

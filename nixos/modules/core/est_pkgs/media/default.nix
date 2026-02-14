@@ -8,6 +8,8 @@
     zathura
     bitwarden-desktop
     bitwarden-cli
+    mesa
+    mangohud
   ];
   # Need to install globally cause i'm too lazy to extract the module
   programs.steam = {
