@@ -30,7 +30,7 @@
     bluetooth.enable = true;
     isLaptop = true;
     vfio = {
-      enable = true;
+      enable = false;
       vfioPciDevices = [ "10de:1f91" "10de:10fa" ];
     };
     containers = {
