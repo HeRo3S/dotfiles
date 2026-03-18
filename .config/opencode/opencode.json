@@ -7,7 +7,6 @@
   },
   "theme": "catppuccin",
   "autoupdate": "notify",
-  "model": "github-copilot/gemini-3-flash-preview",
   "small_model": "github-copilot/gpt-5-mini",
   "provider": {
     "openrouter": {
@@ -19,7 +18,14 @@
   "mcp": {
     "figma": {
       "type": "remote",
-      "url": "https://mcp.figma.com/mcp",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
     }
   }
 }
