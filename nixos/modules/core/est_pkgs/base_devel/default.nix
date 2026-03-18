@@ -24,10 +24,10 @@
     gh
     glab
     wl-clipboard
-    htop
+    btop
     gpustat
     intel-gpu-tools
-    neofetch
+    fastfetch
     neovim
     tmux
     ffmpeg-full

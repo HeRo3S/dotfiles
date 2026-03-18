@@ -21,6 +21,6 @@
     jack2
     jack_capture
     pavucontrol
-    helvum
+    crosspipe
   ];
 }
