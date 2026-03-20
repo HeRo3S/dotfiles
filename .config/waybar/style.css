@@ -42,7 +42,10 @@
 }
 
 #custom-uptime {
-  margin-right: 5px; /* Spacing after the uptime module */
+  margin-right: 5px;
+}
+#memory {
+  margin-left: 5px;
 }
 
 /* Simple Hover effects for individual left modules - BRIGHTER COLOR */
@@ -163,6 +166,10 @@
     color 0.2s ease-in-out;
 }
 
+#tray {
+  margin-right: 5px;
+}
+
 #bluetooth:hover,
 #pulseaudio:hover,
 #backlight:hover,
@@ -179,9 +186,7 @@
 }
 
 #battery {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  margin-right: 7px;
+  /* moved to custom-lock */
 }
 
 #custom-uptime {
@@ -213,6 +218,9 @@
 
 #custom-lock {
   color: #babbf1;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
 }
 #bluetooth {
   color: #888888;
