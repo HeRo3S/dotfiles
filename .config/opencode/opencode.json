@@ -15,7 +15,6 @@
       }
     }
   },
-  "plugin": ["opencode-gemini-auth@latest"],
   "mcp": {
     "figma": {
       "type": "remote",
