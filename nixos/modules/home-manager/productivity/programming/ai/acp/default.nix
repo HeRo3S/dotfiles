@@ -1,1 +1,1 @@
-{ config, pkgs, ... }: { imports = [ ./opencode ]; }
+{ config, pkgs, ... }: { imports = [ ./opencode ./claude ]; }

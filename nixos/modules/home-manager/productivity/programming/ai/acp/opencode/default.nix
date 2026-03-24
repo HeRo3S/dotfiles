@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   wrappedOpencode = pkgs.symlinkJoin {
     name = "opencode-wrapped";
@@ -9,11 +9,13 @@ let
         --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs ]}
     '';
   };
+  opencodeFiles = [ "opencode.json" "tui.json" "skills" ];
 in {
   home.packages = [ wrappedOpencode ];
-  home.file = {
-    ".config/opencode/opencode.json".source =
-      config.lib.file.mkOutOfStoreSymlink
-      ("${config.customVars.dotfilesDir}/.config/opencode/opencode.json");
-  };
+  xdg.configFile = lib.genAttrs (map (file: "opencode/${file}") opencodeFiles)
+    (target: {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.customVars.dotfilesDir}/.config/${target}";
+      recursive = true;
+    });
 }
