@@ -8,7 +8,6 @@ let
 in {
   programs.neovim = {
     enable = true;
-    withNodeJs = true;
     extraPackages = with pkgs; [
       # Runtime dependendies
       fzf
@@ -17,6 +16,7 @@ in {
       gcc
       luajit
       tree-sitter
+      nodejs
 
       # Packages manager for mason
       cargo
