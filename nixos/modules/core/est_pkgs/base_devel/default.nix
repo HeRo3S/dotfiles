@@ -34,5 +34,6 @@
     tcpdump
     iproute2
     dig
+    openvpn
   ];
 }

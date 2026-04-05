@@ -7,6 +7,16 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = with pkgs; [
+    networkmanager-fortisslvpn
+    networkmanager-iodine
+    networkmanager-l2tp
+    networkmanager-openconnect
+    networkmanager-openvpn
+    networkmanager-sstp
+    networkmanager-strongswan
+    networkmanager-vpnc
+  ];
   networking.firewall.trustedInterfaces = [ "virbr0" ];
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   networking.firewall.allowedTCPPortRanges = [{
