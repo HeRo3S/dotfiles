@@ -6,7 +6,7 @@ let
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/opencode \
-        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs ]}
+        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs pkgs.python314 ]}
     '';
   };
   opencodeFiles = [ "opencode.json" "tui.json" "skills" ];

@@ -1,8 +1,17 @@
 {
-    "teammateMode": "auto",
-    "statusLine": {
-        "type": "command",
-        "command": "~/.claude/statusline.sh",
-        "padding": 2
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 2
+  },
+  "enabledPlugins": {},
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
     }
+  },
+  "teammateMode": "auto"
 }

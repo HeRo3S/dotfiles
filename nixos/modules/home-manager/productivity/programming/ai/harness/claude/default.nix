@@ -34,7 +34,7 @@ let
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/claude \
-        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs ]}
+        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs pkgs.python314 ]}
     '';
   };
   claudeFiles = [ "settings.json" "statusline.sh" ];
