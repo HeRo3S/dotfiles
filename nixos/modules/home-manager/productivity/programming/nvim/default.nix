@@ -1,36 +1,28 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs2505, ... }: {
+  home.packages = with pkgs; [
+    neovim
 
-let
-  pkgs2505 = import inputs.nixpkgs-2505 {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
-in {
-  programs.neovim = {
-    enable = true;
-    extraPackages = with pkgs; [
-      # Runtime dependendies
-      fzf
-      ripgrep
-      gnumake
-      gcc
-      luajit
-      tree-sitter
-      nodejs
+    # Runtime dependendies
+    fzf
+    ripgrep
+    gnumake
+    gcc
+    luajit
+    tree-sitter
+    nodejs
 
-      # Packages manager for mason
-      cargo
+    # Packages manager for mason
+    cargo
 
-      #Formatters
-      stylua
+    #Formatters
+    stylua
 
-      # Precommit
-      husky
+    # Precommit
+    husky
 
-      # Codeium
-      pkgs2505.codeium
-    ];
-  };
+    # Codeium
+    pkgs2505.codeium
+  ];
 
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
     ("${config.customVars.dotfilesDir}/.config/nvim/");

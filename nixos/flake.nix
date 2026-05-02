@@ -22,9 +22,17 @@
 
   outputs = { self, nixpkgs, nixpkgs-2505, ... }@inputs:
     let
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
         config.allowUnfree = true;
+      };
+      pkgs2505 = import nixpkgs-2505 {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      specialArgs = {
+        inherit inputs pkgs2505;
       };
     in {
       # use "nixos", or your hostname as the name of the configuration
@@ -32,7 +40,7 @@
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          inherit specialArgs;
           modules = [
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
@@ -40,7 +48,7 @@
         };
         miniPC = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          inherit specialArgs;
           modules = [
             ./hosts/miniPC/configuration.nix
             inputs.home-manager.nixosModules.default
@@ -48,7 +56,7 @@
         };
         sanan = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          inherit specialArgs;
           modules = [
             ./hosts/sanan/configuration.nix
             inputs.home-manager.nixosModules.default

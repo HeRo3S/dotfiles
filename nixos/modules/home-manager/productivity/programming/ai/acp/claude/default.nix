@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs2505, lib, ... }:
 let
-  claudeCodePinned = pkgs.claude-code.overrideAttrs (_old: let
+  claudeCodePinned = pkgs2505.claude-code.overrideAttrs (_old: let
     version = "2.1.52";
-    lockfile = "${pkgs.path}/pkgs/by-name/cl/claude-code/package-lock.json";
+    lockfile = ./package-lock.json;
     src = pkgs.fetchzip {
       url =
         "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
       hash = "sha256-z2KnyIcVabboBFJCTPHICheQHq1rjh/LZ2Y1MQGHTA0=";
     };
-    npmDepsHash = "sha256-sk1RdPMgZD+Ejd6JdKWcK24AdfasnwWATQkwAx5MjmY=";
+    npmDepsHash = "sha256-RpeuAMDT+jocT26M8ELl08Sjcg2iRA/eCi6HwMhEKaY=";
   in {
     inherit version src npmDepsHash;
 
