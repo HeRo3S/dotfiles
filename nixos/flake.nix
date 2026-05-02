@@ -18,6 +18,9 @@
       url = "github:ravitemer/mcphub.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    opencode = {
+      url = "github:anomalyco/opencode";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-2505, ... }@inputs:
