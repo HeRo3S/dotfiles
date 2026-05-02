@@ -14,10 +14,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mcphub-nvim = {
-      url = "github:ravitemer/mcphub.nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     opencode = {
       url = "github:anomalyco/opencode";
     };

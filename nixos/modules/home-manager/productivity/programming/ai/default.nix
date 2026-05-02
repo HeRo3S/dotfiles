@@ -1,1 +1,1 @@
-{ config, pkgs, lib, inputs, ... }: { imports = [ ./acp ./mcp ]; }
+{ ... }: { imports = [ ./harness ]; }

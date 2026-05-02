@@ -1,8 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 let
   wrappedOpencode = pkgs.symlinkJoin {
     name = "opencode-wrapped";
-    paths = [ pkgs.opencode ];
+    paths = [ inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/opencode \
