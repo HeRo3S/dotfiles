@@ -1,0 +1,7 @@
+[user]
+	email = hero3s.vn@gmail.com
+	name = Hung Le Tuan
+
+[includeIf "hasconfig:remote.*.url:git@github_work_custom:*/*"]
+	path = ~/.gitconfig-work-custom
+

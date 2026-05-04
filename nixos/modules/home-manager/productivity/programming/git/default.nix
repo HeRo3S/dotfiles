@@ -4,5 +4,7 @@
   home.file = {
     ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink
       ("${config.customVars.dotfilesDir}/.gitconfig");
+    ".gitconfig-work".source = config.lib.file.mkOutOfStoreSymlink
+      ("${config.customVars.dotfilesDir}/.gitconfig-work");
   };
 }

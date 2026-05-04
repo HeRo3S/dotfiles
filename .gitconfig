@@ -13,3 +13,6 @@
     pr = pull --rebase
     pf = push --force-with-lease
     cp = !bash -c 'source ~/scripts/git-cherry-pick.sh'
+
+[includeIf "gitdir:~/enterprise/"]
+    path = ~/.gitconfig-work

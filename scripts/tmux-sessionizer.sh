@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-selected=$(find ~/Projects ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)
+selected=$(find ~/Projects ~/personal ~/enterprise -mindepth 1 -maxdepth 1 -type d | fzf)
 if [[ -z "$selected" ]]; then
     return 0
 fi
