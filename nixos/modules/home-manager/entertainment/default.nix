@@ -9,6 +9,7 @@
     moonlight-qt
     lsfg-vk
     lsfg-vk-ui
+    xivlauncher
   ];
   xdg.configFile."vesktop/themes".source = config.lib.file.mkOutOfStoreSymlink
     ("${config.customVars.dotfilesDir}/.config/vesktop/themes");
