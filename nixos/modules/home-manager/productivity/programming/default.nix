@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./git ./nvim ./tmux ./ai ./backend ./mobile ./compiler ./misc ];
+  imports = [ ./git ./nvim ./tmux ./ai ./backend ./mobile ./misc ];
 }

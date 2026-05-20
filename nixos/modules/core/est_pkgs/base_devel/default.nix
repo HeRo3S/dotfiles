@@ -7,6 +7,7 @@
     gcc
     libgcc
     cmake
+    go
     cargo
     ripgrep
     tree-sitter
