@@ -1,0 +1,15 @@
+@define-color surface #eff1f5;
+@define-color hover #dce0e8;
+@define-color foreground #4c4f69;
+@define-color muted #6c6f85;
+@define-color accent #1e66f5;
+@define-color accent-bg rgba(30, 102, 245, 0.12);
+@define-color accent-border rgba(30, 102, 245, 0.24);
+@define-color urgent #d20f39;
+@define-color success #40a02b;
+@define-color blue #1e66f5;
+@define-color disabled #9ca0b0;
+@define-color tooltip-fg #4c4f69;
+@define-color outline rgba(76, 79, 105, 0.14);
+@define-color shadow rgba(76, 79, 105, 0.12);
+@define-color shadow-strong rgba(76, 79, 105, 0.2);

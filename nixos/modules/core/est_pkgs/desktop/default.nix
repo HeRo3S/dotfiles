@@ -14,6 +14,15 @@
   };
   programs.hyprlock.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland darkman ];
+    config.common = {
+      default = [ "hyprland" ];
+      "org.freedesktop.impl.portal.Settings" = [ "darkman" ];
+    };
+  };
+
   powerManagement.powerDownCommands = ''
     ${pkgs.systemd}/bin/systemctl suspend
   '';
@@ -33,6 +42,8 @@
     kitty
     waybar
     rofi-unwrapped
+    darkman
+    hyprsunset
     brightnessctl
     playerctl
     pavucontrol

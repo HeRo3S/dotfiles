@@ -22,7 +22,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "catppuccin"
+@import "themes/catppuccin-current"
 
 * {
     font: "Meslo LG M Nerd Font 11";

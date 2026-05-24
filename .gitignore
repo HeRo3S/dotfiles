@@ -4,3 +4,6 @@ env.sh
 result
 monitors.conf
 .gitconfig-work
+.config/kitty/theme-current.conf
+.config/rofi/themes/catppuccin-current.rasi
+.config/waybar/themes/current.css
