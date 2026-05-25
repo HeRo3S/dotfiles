@@ -7,9 +7,7 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.networkmanager.enable = true;
-  networking.networkmanager.plugins = with pkgs; [
-    networkmanager-openvpn
-  ];
+  networking.networkmanager.plugins = with pkgs; [ networkmanager-openvpn ];
   networking.firewall.trustedInterfaces = [ "virbr0" ];
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   networking.firewall.allowedTCPPortRanges = [{
@@ -27,7 +25,7 @@
   # Direct Quad9 DNS servers
   # networking.nameservers = [ "9.9.9.9" "149.112.112.112" ];
 
-  hardware.bluetooth = lib.mkIf config.customCfg.isLaptop {
+  hardware.bluetooth = lib.mkIf config.customCfg.bluetooth.enable {
     enable = true;
     powerOnBoot = true;
     settings.General = {
@@ -41,8 +39,8 @@
     };
   };
   boot.extraModprobeConfig =
-    lib.mkIf config.customCfg.isLaptop "options btusb enable_autosuspend=0";
-  services.blueman.enable = lib.mkIf config.customCfg.isLaptop true;
+    lib.mkIf config.customCfg.bluetooth.enable "options btusb enable_autosuspend=0";
+  services.blueman.enable = lib.mkIf config.customCfg.bluetooth.enable true;
 
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 }
