@@ -1,5 +1,5 @@
 [user]
-	email = hero3s.vn@gmail.com
+	email = hunglt@sanancorp.com
 	name = Hung Le Tuan
 
 [includeIf "hasconfig:remote.*.url:git@github_work_custom:*/*"]
