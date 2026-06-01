@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     opencode = { url = "github:anomalyco/opencode"; };
+    steam-presence = { url = "github:JustTemmie/steam-presence"; };
   };
 
   outputs = { self, nixpkgs, nixpkgs-2505, ... }@inputs:

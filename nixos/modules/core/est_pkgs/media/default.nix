@@ -1,6 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
+  imports = [ inputs.steam-presence.nixosModules.steam-presence ];
   environment.systemPackages = with pkgs; [
     firefox
     mpv
@@ -17,7 +18,14 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    presence = {
+      enable = true;
+      steamApiKeyFile = config.age.secrets.steamAPI.path;
+      userIds = [ "76561198404888285" ];
+    };
   };
+  systemd.user.services.steam-presence.serviceConfig.WorkingDirectory = lib.mkForce "%h";
+
   programs.gamemode.enable = true;
   hardware.xone.enable = true;
   hardware.xpad-noone.enable = true;
