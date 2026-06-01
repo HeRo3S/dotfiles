@@ -10,13 +10,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = { url = "github:ryantm/agenix"; };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    opencode = {
-      url = "github:anomalyco/opencode";
-    };
+    opencode = { url = "github:anomalyco/opencode"; };
   };
 
   outputs = { self, nixpkgs, nixpkgs-2505, ... }@inputs:
@@ -30,9 +30,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      specialArgs = {
-        inherit inputs pkgs2505;
-      };
+      specialArgs = { inherit inputs pkgs2505; };
     in {
       # use "nixos", or your hostname as the name of the configuration
       # it's a better practice than "default" shown in the video

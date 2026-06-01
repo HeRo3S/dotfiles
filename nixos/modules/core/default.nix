@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./auth
     ./variables.nix
     ./i18n
     ./network
