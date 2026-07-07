@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     opencode = { url = "github:anomalyco/opencode"; };
+    claude-code-nix = { url = "github:sadjow/claude-code-nix"; };
     steam-presence = { url = "github:JustTemmie/steam-presence"; };
   };
 

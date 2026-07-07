@@ -19,5 +19,6 @@
       }
     }
   },
-  "teammateMode": "auto"
+  "teammateMode": "auto",
+  "skipAutoPermissionPrompt": true
 }
