@@ -8,7 +8,9 @@
     reaper
     yabridge
     yabridgectl
+    guitarix
+    decent-sampler
+    calibre
     kdePackages.kdenlive
-    texlive.combined.scheme-full
   ];
 }
