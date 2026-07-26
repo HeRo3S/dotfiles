@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [ ./calibre ];
   home.packages = with pkgs; [
     obs-studio
     gimp3
@@ -10,7 +11,6 @@
     yabridgectl
     guitarix
     decent-sampler
-    calibre
     kdePackages.kdenlive
   ];
 }
