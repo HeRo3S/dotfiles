@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-bleeding-edge.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,8 +17,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    opencode = { url = "github:anomalyco/opencode"; };
-    claude-code-nix = { url = "github:sadjow/claude-code-nix"; };
     steam-presence = { url = "github:JustTemmie/steam-presence"; };
   };
 

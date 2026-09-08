@@ -1,12 +1,12 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, harnessPkgs, lib, ... }:
 let
-  wrappedClaudeCode = pkgs.symlinkJoin {
+  wrappedClaudeCode = harnessPkgs.symlinkJoin {
     name = "claude-code-wrapped";
-    paths = [ inputs.claude-code-nix.packages.${pkgs.stdenv.hostPlatform.system}.default ];
-    buildInputs = [ pkgs.makeWrapper ];
+    paths = [ harnessPkgs.claude-code ];
+    buildInputs = [ harnessPkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/claude \
-        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs pkgs.python314 ]}
+        --prefix PATH : ${harnessPkgs.lib.makeBinPath [ harnessPkgs.nodejs harnessPkgs.python314 ]}
     '';
   };
   claudeFiles = [ "settings.json" "statusline.sh" ];

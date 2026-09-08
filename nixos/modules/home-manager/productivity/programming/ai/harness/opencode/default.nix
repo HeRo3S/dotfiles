@@ -1,16 +1,18 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, harnessPkgs, lib, ... }:
 let
-  wrappedOpencode = pkgs.symlinkJoin {
+  wrappedOpencode = harnessPkgs.symlinkJoin {
     name = "opencode-wrapped";
-    paths = [ inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default ];
-    buildInputs = [ pkgs.makeWrapper ];
+    paths = [ harnessPkgs.opencode ];
+    buildInputs = [ harnessPkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/opencode \
-        --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nodejs pkgs.python314 ]}
+        --prefix PATH : ${harnessPkgs.lib.makeBinPath [ harnessPkgs.nodejs harnessPkgs.python314 ]}
     '';
   };
   opencodeFiles = [ "opencode.json" "tui.json" "skills" ];
 in {
+  imports = [ ./openchamber.nix ];
+
   home.packages = [ wrappedOpencode ];
   xdg.configFile = lib.genAttrs (map (file: "opencode/${file}") opencodeFiles)
     (target: {
