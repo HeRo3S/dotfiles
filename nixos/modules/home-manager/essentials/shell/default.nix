@@ -1,5 +1,9 @@
 { ... }:
 
 {
-  imports = [ ./zsh.nix ./starship.nix ];
+  imports = [
+    ./zsh.nix
+    ./starship.nix
+    ./direnv.nix
+  ];
 }
