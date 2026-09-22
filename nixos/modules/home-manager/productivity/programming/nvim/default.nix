@@ -1,29 +1,70 @@
-{ config, pkgs, pkgs2505, ... }: {
-  home.packages = with pkgs; [
-    neovim
+{
+  config,
+  pkgs,
+  pkgs2505,
+  ...
+}:
+{
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-unwrapped;
+    withNodeJs = false;
+    withPython3 = false;
+    withRuby = false;
+    sideloadInitLua = true;
+    extraPackages = with pkgs; [
+      # Runtime dependencies
+      fzf
+      ripgrep
+      gnumake
+      gcc
+      luajit
+      tree-sitter
 
-    # Runtime dependendies
-    fzf
-    ripgrep
-    gnumake
-    gcc
-    luajit
-    tree-sitter
-    nodejs
+      # Language servers
+      lua-language-server
+      typescript-language-server
+      vtsls
+      vue-language-server
+      pyright
+      rust-analyzer
+      gopls
+      tailwindcss-language-server
+      clang-tools
+      texlab
 
-    # Packages manager for mason
-    cargo
+      # Formatters
+      stylua
+      python3Packages.autopep8
+      shfmt
+      texlivePackages.latexindent
+      prettierd
+      prettier
+      djlint
+      php83Packages.php-cs-fixer
+      nixfmt
 
-    #Formatters
-    stylua
+      # Linters
+      python3Packages.flake8
+      shellcheck
+      texlivePackages.chktex
+      eslint_d
 
-    # Precommit
-    husky
+      # Debug adapters
+      vscode-js-debug
 
-    # Codeium
-    pkgs2505.codeium
-  ];
+      # Codeium
+      pkgs2505.codeium
+    ];
+    extraWrapperArgs = [
+      "--set"
+      "VUE_LANGUAGE_SERVER_PATH"
+      "${pkgs.vue-language-server}/lib/language-tools/packages/language-server"
+    ];
+  };
 
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
-    ("${config.customVars.dotfilesDir}/.config/nvim/");
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink (
+    "${config.customVars.dotfilesDir}/.config/nvim/"
+  );
+
 }
