@@ -1,31 +1,24 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "update": "notify",
-  "agents": {
-    "title": {
-      "model": "opencode/big-pickle"
-    }
-  },
-  "providers": {
+  "autoupdate": "notify",
+  "small_model": "opencode/big-pickle",
+  "provider": {
     "openrouter": {
-      "settings": {
-        "apiKey": "{env:OPENROUTER_API_KEY}"
+      "options": {
+        "api_key": "{env:OPENROUTER_API_KEY}"
       }
     }
   },
   "mcp": {
-    "servers": {
-      "figma": {
-        "type": "remote",
-        "url": "https://mcp.figma.com/mcp"
-      },
-      "context7": {
-        "type": "remote",
-        "url": "https://mcp.context7.com/mcp",
-        "oauth": false,
-        "headers": {
-          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-        }
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     }
   }
