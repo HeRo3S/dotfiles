@@ -1,13 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 {
-  config = lib.mkIf config.customCfg.isLaptop {
-    services.logind.settings.Login = {
-      HandleLidSwitch = "hybrid-sleep";
-      HandleLidSwitchExternalPower = "ignore";
-      HandleLidSwitchDocked = "ignore";
-    };
-
+  config = lib.mkIf config.customCfg.battery.enable {
     powerManagement.enable = true;
 
     services.tlp = {

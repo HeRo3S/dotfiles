@@ -22,6 +22,11 @@
     };
     bluetooth.enable = lib.mkEnableOption "bluetooth";
     isLaptop = lib.mkEnableOption "laptop";
+    battery.enable = lib.mkOption {
+      type = bool;
+      default = config.customCfg.isLaptop;
+      description = "Enable battery-oriented power management and TLP.";
+    };
     autoLogin.enable = lib.mkEnableOption "automatic graphical login";
     sunshine.enable = lib.mkEnableOption "Sunshine streaming";
     vfio = {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   networking.hostName = "nixos"; # Define your hostname.
@@ -24,23 +24,6 @@
 
   # Direct Quad9 DNS servers
   # networking.nameservers = [ "9.9.9.9" "149.112.112.112" ];
-
-  hardware.bluetooth = lib.mkIf config.customCfg.bluetooth.enable {
-    enable = true;
-    powerOnBoot = true;
-    settings.General = {
-      experimental = true; # show battery
-      # https://www.reddit.com/r/NixOS/comments/1ch5d2p/comment/lkbabax/
-      # for pairing bluetooth controller
-      Privacy = "device";
-      JustWorksRepairing = "always";
-      Class = "0x000100";
-      FastConnectable = true;
-    };
-  };
-  boot.extraModprobeConfig =
-    lib.mkIf config.customCfg.bluetooth.enable "options btusb enable_autosuspend=0";
-  services.blueman.enable = lib.mkIf config.customCfg.bluetooth.enable true;
 
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 }
