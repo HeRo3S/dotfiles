@@ -2,6 +2,16 @@
 
 {
   services.displayManager.ly = { enable = true; };
+  services.displayManager.autoLogin = {
+    enable = config.customCfg.autoLogin.enable;
+    user = config.customCfg.user.name;
+  };
+  services.displayManager.defaultSession = "hyprland-uwsm";
+  services.xserver.desktopManager.runXdgAutostartIfNone = false;
+  # Ly runs the shared session wrapper before UWSM sets this variable.
+  services.xserver.displayManager.sessionCommands = ''
+    export XDG_CURRENT_DESKTOP=Hyprland
+  '';
   # services.displayManager.sddm = {
   #   enable = true;
   #   wayland.enable = true;
@@ -9,8 +19,12 @@
 
   programs.hyprland = {
     enable = true;
-    # withUWSM = true;
+    withUWSM = true;
     xwayland.enable = true;
+  };
+  programs.uwsm.waylandCompositors.hyprland = {
+    prettyName = "Hyprland";
+    binPath = "/run/current-system/sw/bin/start-hyprland";
   };
   programs.hyprlock.enable = true;
 

@@ -41,7 +41,9 @@
   systemd.user.services.darkman = {
     Unit = {
       Description = "Dark mode transition service";
-      After = [ "default.target" ];
+      ConditionEnvironment = "WAYLAND_DISPLAY";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
     };
 
     Service = {
@@ -49,13 +51,15 @@
       Restart = "on-failure";
     };
 
-    Install.WantedBy = [ "default.target" ];
+    Install.WantedBy = [ "default.target" "graphical-session.target" ];
   };
 
   systemd.user.services.hyprsunset = {
     Unit = {
       Description = "Hyprland blue light filter";
-      After = [ "default.target" ];
+      ConditionEnvironment = "WAYLAND_DISPLAY";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
     };
 
     Service = {
@@ -64,6 +68,6 @@
       RestartSec = 5;
     };
 
-    Install.WantedBy = [ "default.target" ];
+    Install.WantedBy = [ "default.target" "graphical-session.target" ];
   };
 }

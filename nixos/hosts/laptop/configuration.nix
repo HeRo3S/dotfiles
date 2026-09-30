@@ -29,6 +29,8 @@
     };
     bluetooth.enable = true;
     isLaptop = true;
+    autoLogin.enable = false;
+    sunshine.enable = false;
     vfio = {
       enable = false;
       vfioPciDevices = [ "10de:1f91" "10de:10fa" ];

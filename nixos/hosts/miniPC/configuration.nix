@@ -27,6 +27,8 @@
     };
     bluetooth.enable = true;
     isLaptop = true;
+    autoLogin.enable = true;
+    sunshine.enable = true;
     vfio = {
       enable = false;
       amdCpu = true;

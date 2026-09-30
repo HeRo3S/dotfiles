@@ -22,6 +22,8 @@
     };
     bluetooth.enable = lib.mkEnableOption "bluetooth";
     isLaptop = lib.mkEnableOption "laptop";
+    autoLogin.enable = lib.mkEnableOption "automatic graphical login";
+    sunshine.enable = lib.mkEnableOption "Sunshine streaming";
     vfio = {
       enable = lib.mkEnableOption "vfio";
       amdCpu = lib.mkEnableOption "amd cpu";

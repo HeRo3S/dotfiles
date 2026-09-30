@@ -1,7 +1,7 @@
 { config, pkgs, inputs, lib, ... }:
 
 {
-  imports = [ inputs.steam-presence.nixosModules.steam-presence ];
+  imports = [ inputs.steam-presence.nixosModules.steam-presence ./sunshine.nix ];
   environment.systemPackages = with pkgs; [
     firefox
     mpv

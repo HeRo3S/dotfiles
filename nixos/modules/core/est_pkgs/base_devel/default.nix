@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [ ./tailscale.nix ];
+
   services.openssh.enable = true;
   environment.systemPackages = with pkgs; [
     usbutils
