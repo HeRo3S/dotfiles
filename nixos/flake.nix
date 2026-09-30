@@ -6,6 +6,10 @@
     nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-bleeding-edge.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    opencode = {
+      url = "github:anomalyco/opencode/v2";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
