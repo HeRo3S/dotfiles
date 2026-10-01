@@ -6,6 +6,12 @@
   home.packages = with pkgs; [ linux-wallpaperengine hyprshot ];
   home.sessionVariables = { HYPRSHOT_DIR = "Pictures/screenshot"; };
 
+  # Config lives in the existing out-of-store Hypr directory.
+  services.hypridle = {
+    enable = true;
+    systemdTarget = "graphical-session.target";
+  };
+
   systemd.user.services.dunst = {
     Unit = {
       Description = "Notification daemon";
