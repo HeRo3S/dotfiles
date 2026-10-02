@@ -26,4 +26,3 @@ chmod +x "$parent_dir"/scripts/tmux-sessionizer.sh
 # TODO:setup X11/wayland
 # TODO:setup windows manager
 # TODO:setup services/deamon
-

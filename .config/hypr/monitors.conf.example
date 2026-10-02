@@ -1,0 +1,8 @@
+# Copy to monitors.conf and customize for this machine's monitor setup.
+# monitors.conf is ignored by Git and is the file Hyprland actually sources.
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor = , preferred, auto, auto
+
+# Example: two 1080p displays, with HDMI-A-2 on the left.
+# monitor = HDMI-A-2, 1920x1080@100, 0x0, 1
+# monitor = HDMI-A-1, 1920x1080@100, 1920x0, 1

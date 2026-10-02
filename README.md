@@ -52,6 +52,23 @@ home-manager switch --flake .#laptop
 nix develop
 ```
 
+### Monitor Setup
+
+`.config/hypr/monitors.conf.example` is the tracked template.
+`.config/hypr/monitors.conf` is the machine-local file Hyprland actually sources;
+it is untracked and ignored by Git.
+
+On a fresh setup, create the local file only if it does not already exist:
+
+```sh
+cp -n .config/hypr/monitors.conf.example .config/hypr/monitors.conf
+```
+
+Edit `monitors.conf` for that machine's displays, then run `hyprctl reload` if
+Hyprland is running. No profiles, selector scripts, or automatic setup hooks.
+`git reset --hard HEAD` preserves the local file. `git clean -fdx` can delete it,
+and resetting to an older commit that tracked it can overwrite it.
+
 ## Configuration Options
 - `customCfg.graphics.*` - GPU configuration (NVIDIA/Intel)
 - `customCfg.virtualization.*` - Container and VM support
