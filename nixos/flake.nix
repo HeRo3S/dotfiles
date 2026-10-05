@@ -11,16 +11,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix = { url = "github:ryantm/agenix"; };
+    agenix = {
+      url = "github:ryantm/agenix";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    steam-presence = { url = "github:JustTemmie/steam-presence"; };
+    steam-presence = {
+      url = "github:JustTemmie/steam-presence";
+    };
+    moonboot = {
+      url = "github:HeRo3S/moonboot";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-2505, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-2505,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -32,7 +45,8 @@
         config.allowUnfree = true;
       };
       specialArgs = { inherit inputs pkgs2505; };
-    in {
+    in
+    {
       # use "nixos", or your hostname as the name of the configuration
       # it's a better practice than "default" shown in the video
       nixosConfigurations = {
