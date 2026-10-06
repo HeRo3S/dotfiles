@@ -7,6 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./ddclient.nix
     ../../modules/core
     inputs.home-manager.nixosModules.default
   ];
