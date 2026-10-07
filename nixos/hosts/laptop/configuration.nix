@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs2505, inputs, ... }:
+{ config, pkgs, pkgs2505, pkgsNightly, inputs, ... }:
 
 {
   imports = [
@@ -96,6 +96,7 @@
       inherit inputs;
       inherit pkgs;
       inherit pkgs2505;
+      inherit pkgsNightly;
     };
     users = { ${config.customCfg.user.name} = import ./home.nix; };
   };

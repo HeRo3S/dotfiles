@@ -1,12 +1,12 @@
-{ config, harnessPkgs, lib, ... }:
+{ config, pkgsNightly, lib, ... }:
 let
-  wrappedOpencode = harnessPkgs.symlinkJoin {
+  wrappedOpencode = pkgsNightly.symlinkJoin {
     name = "opencode-wrapped";
-    paths = [ harnessPkgs.opencode ];
-    buildInputs = [ harnessPkgs.makeWrapper ];
+    paths = [ pkgsNightly.opencode ];
+    buildInputs = [ pkgsNightly.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/opencode \
-        --prefix PATH : ${harnessPkgs.lib.makeBinPath [ harnessPkgs.nodejs harnessPkgs.python314 ]}
+        --prefix PATH : ${pkgsNightly.lib.makeBinPath [ pkgsNightly.nodejs pkgsNightly.python314 ]}
     '';
   };
   opencodeFiles = [ "opencode.json" "tui.json" "skills" ];

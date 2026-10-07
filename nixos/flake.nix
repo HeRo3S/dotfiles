@@ -32,6 +32,7 @@
       self,
       nixpkgs,
       nixpkgs-2505,
+      nixpkgs-bleeding-edge,
       ...
     }@inputs:
     let
@@ -44,7 +45,11 @@
         inherit system;
         config.allowUnfree = true;
       };
-      specialArgs = { inherit inputs pkgs2505; };
+      pkgsNightly = import nixpkgs-bleeding-edge {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      specialArgs = { inherit inputs pkgs2505 pkgsNightly; };
     in
     {
       # use "nixos", or your hostname as the name of the configuration
