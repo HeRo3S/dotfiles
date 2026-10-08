@@ -29,11 +29,12 @@
   programs.gamemode.enable = true;
   hardware.xone.enable = true;
   hardware.xpad-noone.enable = true;
-  hardware.xpadneo.enable = true;
+  # Disabled while testing Sunshine virtual controllers with Steam's default HIDAPI.
+  # hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
 
   boot = {
-    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    # extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
     extraModprobeConfig = ''
       options bluetooth disable_ertm=Y
     '';
