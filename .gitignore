@@ -2,7 +2,7 @@
 env.sh
 */result
 result
-monitors.conf
+.config/hypr/monitors.conf
 .gitconfig-work
 .config/kitty/theme-current.conf
 .config/rofi/themes/catppuccin-current.rasi
