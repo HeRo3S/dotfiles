@@ -9,7 +9,7 @@ let
         --prefix PATH : ${pkgsNightly.lib.makeBinPath [ pkgsNightly.nodejs pkgsNightly.python314 ]}
     '';
   };
-  opencodeFiles = [ "opencode.json" "tui.json" "skills" ];
+  opencodeFiles = [ "opencode.json" "cli.json" "skills" ];
 in {
   imports = [ ./openchamber.nix ];
 
