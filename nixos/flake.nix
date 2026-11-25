@@ -19,6 +19,9 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    openchamber = {
+      url = "github:openchamber/openchamber";
+    };
     steam-presence = {
       url = "github:JustTemmie/steam-presence";
     };
