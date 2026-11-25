@@ -1,5 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgsNightly, lib, ... }:
 
 {
-  home.packages = with pkgs; [ bootdev-cli ];
+  home.packages = with pkgsNightly; [ bootdev-cli ];
 }
