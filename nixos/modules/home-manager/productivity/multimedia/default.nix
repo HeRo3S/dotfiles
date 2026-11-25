@@ -6,6 +6,7 @@
     obs-studio
     gimp3
     krita
+    godot
     reaper
     yabridge
     yabridgectl
