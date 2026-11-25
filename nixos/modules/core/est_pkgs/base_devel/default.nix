@@ -38,5 +38,6 @@
     iproute2
     dig
     openvpn
+    devenv
   ];
 }

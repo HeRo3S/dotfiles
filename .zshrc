@@ -31,6 +31,7 @@ zvm_after_init() {
 }
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+eval "$(devenv hook zsh)"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
